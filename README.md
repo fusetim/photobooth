@@ -17,6 +17,8 @@ when it is present.
 
 ***TODO***
 
+Roadmap in issue [#1](https://github.com/fusetim/photobooth/issues/1).
+
 ## Building & Deploying
 
 It is a bit early to deploy this app in production, and the building steps
