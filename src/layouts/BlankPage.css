@@ -1,0 +1,23 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root, html, body {
+    margin: 0;
+    padding: 0;
+    background-color: white;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    line-height: 1rem;
+    font-size: 1rem;
+    text-decoration: none;
+    color: black;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}

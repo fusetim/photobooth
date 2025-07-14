@@ -1,16 +1,61 @@
 ---
+import type { BlankPageProps } from "../layouts/BlankPage.astro";
+import BlankPage from "../layouts/BlankPage.astro";
+import Header from "../components/Header/Header.astro";
 
+const pageProps = {
+	head: {
+		title: "Photobooth",
+		description: "A simple photobooth app built with Astro and Tailwind CSS."
+	}
+} satisfies BlankPageProps;
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/photobooth/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BlankPage {...pageProps}>
+	<Header />
+	<main>
+		<div>
+			<h1>
+				Hello, <span class="strike">world</span> PhotoBooth!
+			</h1>
+			<p>
+				Public photo display (website) for public events with a simple but familiar experience. 
+			</p>
+		</div>
+	</main>
+</BlankPage>
+
+<style>
+	main {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		padding: 0.5rem;
+		width: 100%;
+		min-height: 20rem;
+	}
+
+	main > div {
+		max-width: 800px;
+		margin: 0 auto;
+	}
+
+	main > div > h1 {
+		font-size: 2rem;
+		font-weight: bold;
+		margin-bottom: 1rem;
+	}
+
+	main > div > p {
+		font-size: 1.25rem;
+		line-height: 1.5;
+		color: #555;
+	}
+
+	.strike {
+		text-decoration: line-through;
+		font-style: italic;
+		color: red;
+	}
+</style>

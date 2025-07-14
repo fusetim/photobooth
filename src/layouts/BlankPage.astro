@@ -1,0 +1,18 @@
+---
+import type { HeadProps } from "./BaseHead.astro";
+import BaseHead from "./BaseHead.astro";
+import "./BlankPage.css";
+
+export interface BlankPageProps {
+    head: HeadProps
+}
+
+const { head } = Astro.props as BlankPageProps;
+---
+
+<html lang="en">
+	<BaseHead {...head} />
+	<body>
+		<slot />
+	</body>
+</html>

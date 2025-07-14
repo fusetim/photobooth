@@ -1,0 +1,18 @@
+---
+import "./Header.css";
+import Logo from "../../assets/brand/PhotoBooth.svg";
+import MdiHome from "~icons/mdi/home";
+import MdiLanguage from "~icons/mdi/language";
+---
+
+<header>
+    <div id="header-content">
+        <a id="header-logo" href="/photobooth"><img src={Logo.src} alt="PhotoBooth Logo" /></a>
+        <nav>
+            <ul>
+                <li><a href="/photobooth"><MdiHome/></a></li>
+                <li><a href="#lang"><MdiLanguage/></a></li>
+            </ul>
+        </nav>
+    </div>
+</header>

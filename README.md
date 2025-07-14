@@ -1,4 +1,4 @@
-# PhotoBooth 
+![PhotoBooth Logo](src/assets/brand/PhotoBooth.svg)
 
 In the continuity of [Immich](https://immich.app), and [Google Photo links](https://photos.google.com/),
 PhotoBooth hopes to create a familiar experience for photos that are expected to be published on Events'
