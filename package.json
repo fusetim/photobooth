@@ -1,7 +1,7 @@
 {
   "name": "photobooth",
   "type": "module",
-  "description": "The album display for public events, entirely static!",
+  "description": "Photo gallery (website) for public events with a simple yet familiar experience.",
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
