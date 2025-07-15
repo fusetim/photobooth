@@ -1,0 +1,11 @@
+.album-browser {
+    display: block;
+    width: 100%;
+}
+
+.album-browser > h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: black;
+    margin-bottom: 1rem;
+}

@@ -1,7 +1,13 @@
 ---
 import type { BlankPageProps } from "../layouts/BlankPage.astro";
-import BlankPage from "../layouts/BlankPage.astro";
+import BlankPage from "../layouts/BlankPage.astro";		
 import Header from "../components/Header/Header.astro";
+
+import AlbumPlaceholder01 from "../assets/placeholders/pexels-dhanno-32532629.jpg";
+import AlbumPlaceholder02 from "../assets/placeholders/pexels-lexi-lauwers-1431940-18312817.jpg";
+import AlbumPlaceholder03 from "../assets/placeholders/pexels-rahimegul-32502707.jpg";
+
+import AlbumBrowser from "../components/AlbumBrowser/AlbumBrowser.astro";
 
 const pageProps = {
 	head: {
@@ -9,6 +15,37 @@ const pageProps = {
 		description: "A simple photobooth app built with Astro and Tailwind CSS."
 	}
 } satisfies BlankPageProps;
+
+const albums = [
+	{
+		title: "My Albums of 2025",
+		albums: [
+			{
+				title: "Wedding Photos",
+				size: 120,
+				cover_image: AlbumPlaceholder01,
+				url: "#/albums/wedding-photos"
+			},
+			{
+				title: "Birthday Party",
+				size: 85,
+				cover_image: AlbumPlaceholder02,
+				url: "#/albums/birthday-party"
+			}
+		]
+	},
+	{
+		title: "My Albums of 2024",
+		albums: [
+			{
+				title: "Vacation Memories",
+				size: 200,
+				cover_image: AlbumPlaceholder03,
+				url: "#/albums/vacation-memories"
+			}
+		]
+	}
+];
 ---
 
 <BlankPage {...pageProps}>
@@ -22,6 +59,9 @@ const pageProps = {
 				Public photo display (website) for public events with a simple but familiar experience. 
 			</p>
 		</div>
+		<div style="margin-top: 4rem; width: 100%;">
+			<AlbumBrowser albums={albums}></AlbumBrowser>
+		</div>
 	</main>
 </BlankPage>
 
@@ -32,8 +72,8 @@ const pageProps = {
 		align-items: center;
 		justify-content: center;
 		padding: 0.5rem;
+		margin-top: calc(min(20vh, 10rem));
 		width: 100%;
-		min-height: 20rem;
 	}
 
 	main > div {

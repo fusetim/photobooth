@@ -1,0 +1,17 @@
+---
+import AlbumCard from "../AlbumCard/AlbumCard.astro";
+import "./AlbumGroup.css";
+
+export interface AlbumGroupProps {
+    title: string;
+}
+
+const { title } = Astro.props as AlbumGroupProps;
+---
+
+<section class="album-group">
+    <h2>{title}</h2>
+    <div class="album-grid">
+        <slot />
+    </div>
+</section>

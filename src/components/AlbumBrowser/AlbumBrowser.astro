@@ -1,0 +1,27 @@
+---
+import type { AlbumGroup as AlbumGroupData } from "../../lib/models/album";
+import AlbumCard from "../AlbumCard/AlbumCard.astro";
+import AlbumGroup from "./AlbumGroup.astro";
+import "./AlbumBrowser.css";
+
+export interface AlbumBrowserProps {
+    albums: AlbumGroupData[];
+}
+
+const { albums } = Astro.props as AlbumBrowserProps;
+---
+
+<div class="album-browser">
+    {albums.map((group) => (
+        <AlbumGroup title={group.title}>
+            {group.albums.map((album) => (
+                <AlbumCard
+                    cover={album.cover_image}
+                    title={album.title}
+                    size={album.size}
+                    url={album.url}
+                />
+            ))}
+        </AlbumGroup>
+    ))}
+</div>

@@ -1,0 +1,23 @@
+---
+import { Picture } from "astro:assets";
+import "./AlbumCard.css";
+
+export interface AlbumCardProps {
+    title: string;
+    size: number;
+    cover: string | ImageMetadata;
+    url: string;
+};
+
+const { title, size, cover, url } = Astro.props as AlbumCardProps;
+---
+
+<a class="album-card" href={url}>
+    <div class="album-cover">
+        <Picture alt={`Cover picture of album '${title}'`} src={cover}></Picture>
+    </div>
+    <div class="album-info">
+        <h3 class="album-title">{title}</h3>
+        <p class="album-size">{size} items</p>
+    </div>
+</a>
