@@ -1,0 +1,28 @@
+---
+import AlbumViewer from "../../../../components/AlbumViewer/AlbumViewer.astro";
+import Header from "../../../../components/Header/Header.astro";
+import BlankPage, { type BlankPageProps } from "../../../../layouts/BlankPage.astro";
+
+export function getStaticPaths() {
+  const albumIds = ["000aaa", "000bbb", "000ccc"];
+  const photoIds = ["000aaa", "000bbb", "000ccc", "000ddd", "000eee", "000fff", "000ggg", "000hhh", "000iii", "000jjj", "000kkk"];
+  return [
+    ...albumIds.flatMap(albumId => 
+      photoIds.map(photoId => ({ params: { album_id: albumId, photo_id: photoId } }))
+    )
+  ];
+}
+
+const albumId = Astro.params.album_id;
+const photoId = Astro.params.photo_id;
+
+const pageProps = {
+	head: {
+		title: `Photobooth - Photo ${photoId}`,
+	}
+} satisfies BlankPageProps;
+---
+
+<BlankPage {...pageProps}>
+    <p>Hello {photoId}</p>
+</BlankPage>

@@ -1,7 +1,7 @@
 ---
-import AlbumViewer from "../../components/AlbumViewer/AlbumViewer.astro";
-import Header from "../../components/Header/Header.astro";
-import BlankPage, { type BlankPageProps } from "../../layouts/BlankPage.astro";
+import AlbumViewer from "../../../components/AlbumViewer/AlbumViewer.astro";
+import Header from "../../../components/Header/Header.astro";
+import BlankPage, { type BlankPageProps } from "../../../layouts/BlankPage.astro";
 
 export function getStaticPaths() {
   return [
@@ -22,5 +22,5 @@ const pageProps = {
 
 <BlankPage {...pageProps}>
     <Header></Header>
-    <AlbumViewer album-id={albumId}></AlbumViewer>
+    <AlbumViewer albumId={albumId}></AlbumViewer>
 </BlankPage>
