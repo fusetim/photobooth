@@ -3,7 +3,7 @@ import { Picture } from "astro:assets";
 import MdiExpandAll from "~icons/mdi/arrow-expand-all";
 
 export interface AlbumPictureProps {
-    src: string | ImageMetadata;
+    src: ImageMetadata;
     alt: string;
     href: string;
 }
@@ -18,9 +18,12 @@ const colorPalette = [
     "#116A7B"
 ];
 const randomColor = colorPalette[Math.floor(Math.random() * colorPalette.length)];
+
+const aspectRatio = src.width / src.height;
+const maxWidthFactor = aspectRatio > 1 ? 1.5*aspectRatio : 1.25*aspectRatio;
 ---
 
-<a href={href} class="album-picture" style={`background-color: ${randomColor};`}>
+<a href={href} class="album-picture" style={`background-color: ${randomColor}; max-width: calc(${maxWidthFactor}*var(--album-viewer-photo-max-height))`}>
     <div class="album-picture-shadowcaster">
         <MdiExpandAll class="expand-all"/>
     </div>
@@ -32,7 +35,7 @@ const randomColor = colorPalette[Math.floor(Math.random() * colorPalette.length)
 
 <style>
     .album-picture {
-        object-fit: contain;
+        object-fit: cover;
         position: relative;
 
         cursor: pointer;
@@ -47,7 +50,7 @@ const randomColor = colorPalette[Math.floor(Math.random() * colorPalette.length)
         display: block;
         height: 100%;
         width: 100%;
-        object-fit: contain;
+        object-fit: cover;
     }
 
     .album-picture-shadowcaster {
