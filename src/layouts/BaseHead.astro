@@ -1,7 +1,7 @@
 ---
 export interface HeadProps {
     title: string;
-    description: string;
+    description?: string;
 }
 
 const { title, description } = Astro.props as HeadProps;
@@ -13,5 +13,6 @@ const { title, description } = Astro.props as HeadProps;
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content={Astro.generator} />
     {description && <meta name="description" content={description} />}
+    <base href="/photobooth/" />
     <title>{title}</title>
 </head>
