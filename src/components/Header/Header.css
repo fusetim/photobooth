@@ -2,9 +2,8 @@
     height: 4.5rem;
     padding: 0.5rem 1rem;
     width: 100%;
-    position: fixed;
+    position: sticky;
     top: 0;
-    left: 0;
 
     background-color: white;
     border-bottom: 1px solid #eaeaea;
@@ -12,11 +11,6 @@
     @media screen and (max-width: 768px) {
         padding: 0.5rem 0;
     }
-}
-
-#header-spacer {
-    height: 4.5rem;
-    width: 100%;
 }
 
 #header-content {
