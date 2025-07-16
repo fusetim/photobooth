@@ -2,6 +2,15 @@
 import "./AlbumViewer.css";
 import MdiArrowLeft from "~icons/mdi/arrow-left";
 
+import AlbumPlaceholder01 from "../../assets/placeholders/pexels-dhanno-32532629.jpg";
+import AlbumPlaceholder02 from "../../assets/placeholders/pexels-lexi-lauwers-1431940-18312817.jpg";
+import AlbumPlaceholder03 from "../../assets/placeholders/pexels-rahimegul-32502707.jpg";
+import AlbumPlaceholder04 from "../../assets/placeholders/pexels-efrem-efre-2786187-17060790.jpg";
+import AlbumPlaceholder05 from "../../assets/placeholders/pexels-jose-parra-325935170-33013992.jpg";
+import AlbumPlaceholder06 from "../../assets/placeholders/pexels-nathan-berthault-572786212-17384590.jpg";
+import AlbumPlaceholder07 from "../../assets/placeholders/pexels-rdne-9089256.jpg";
+import AlbumPicture from "./AlbumPicture.astro";
+
 export interface AlbumViewerProps {
     albumId: string;
 }
@@ -37,31 +46,22 @@ const { albumId } = Astro.props as AlbumViewerProps;
         <div class="photo-group">
             <h6>Photo Group Name</h6>
             <div class="items">
-                <div class="img-placeholder"></div>
-                <div class="img-placeholder"></div>
-                <div class="img-placeholder"></div>
-                <div class="img-placeholder"></div>
-                <div class="img-placeholder"></div>
+                <AlbumPicture src={AlbumPlaceholder01} alt="picture"></AlbumPicture>
+                <AlbumPicture src={AlbumPlaceholder07} alt="picture"></AlbumPicture>
+                <AlbumPicture src={AlbumPlaceholder02} alt="picture"></AlbumPicture>
+                <AlbumPicture src={AlbumPlaceholder04} alt="picture"></AlbumPicture>
+                <AlbumPicture src={AlbumPlaceholder03} alt="picture"></AlbumPicture>
+                <AlbumPicture src={AlbumPlaceholder06} alt="picture"></AlbumPicture>
+                <AlbumPicture src={AlbumPlaceholder05} alt="picture"></AlbumPicture>
             </div>
         </div>
         <div class="photo-group">
             <h6>Photo Group Name</h6>
             <div class="items">
-                <div class="img-placeholder"></div>
-                <div class="img-placeholder"></div>
-                <div class="img-placeholder"></div>
-                <div class="img-placeholder"></div>
-                <div class="img-placeholder"></div>
-            </div>
-        </div>
-        <div class="photo-group">
-            <h6>Photo Group Name</h6>
-            <div class="items">
-                <div class="img-placeholder"></div>
-                <div class="img-placeholder"></div>
-                <div class="img-placeholder"></div>
-                <div class="img-placeholder"></div>
-                <div class="img-placeholder"></div>
+                <AlbumPicture src={AlbumPlaceholder07} alt="picture"></AlbumPicture>
+                <AlbumPicture src={AlbumPlaceholder05} alt="picture"></AlbumPicture>
+                <AlbumPicture src={AlbumPlaceholder06} alt="picture"></AlbumPicture>
+                <AlbumPicture src={AlbumPlaceholder01} alt="picture"></AlbumPicture>
             </div>
         </div>
     </section>
