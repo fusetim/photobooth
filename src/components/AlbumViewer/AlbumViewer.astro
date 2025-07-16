@@ -1,0 +1,68 @@
+---
+import "./AlbumViewer.css";
+import MdiArrowLeft from "~icons/mdi/arrow-left";
+
+export interface AlbumViewerProps {
+    albumId: string;
+}
+
+const { albumId } = Astro.props as AlbumViewerProps;
+---
+
+<main class="album-viewer">
+    <header>
+        <div class="album-viewer-container">
+            <a href="">
+                <MdiArrowLeft />
+                <span>Return to the Albums</span>
+            </a>
+        </div>
+    </header>
+    <section class="album-viewer-banner">
+        <h1>The Album Name</h1>
+        <div class="banner-details">
+            <p>January 2003 - September 2003</p>
+            <p>803 items</p>
+        </div>
+        <div class="banner-tags">
+            <a>#Wildlife</a>
+            <a>#Nature</a>
+            <a>#Animals</a>
+            <a>#Photography</a>
+            <a>#Travel</a>
+        </div>
+        <p class="banner-desc">The album description</p>
+    </section>
+    <section class="album-viewer-content">
+        <div class="photo-group">
+            <h6>Photo Group Name</h6>
+            <div class="items">
+                <div class="img-placeholder"></div>
+                <div class="img-placeholder"></div>
+                <div class="img-placeholder"></div>
+                <div class="img-placeholder"></div>
+                <div class="img-placeholder"></div>
+            </div>
+        </div>
+        <div class="photo-group">
+            <h6>Photo Group Name</h6>
+            <div class="items">
+                <div class="img-placeholder"></div>
+                <div class="img-placeholder"></div>
+                <div class="img-placeholder"></div>
+                <div class="img-placeholder"></div>
+                <div class="img-placeholder"></div>
+            </div>
+        </div>
+        <div class="photo-group">
+            <h6>Photo Group Name</h6>
+            <div class="items">
+                <div class="img-placeholder"></div>
+                <div class="img-placeholder"></div>
+                <div class="img-placeholder"></div>
+                <div class="img-placeholder"></div>
+                <div class="img-placeholder"></div>
+            </div>
+        </div>
+    </section>
+</main>
